@@ -58,6 +58,45 @@ finally add the command in script section in `package.json`:
 ```
 later, you can use `npm run lint`.
 
+### eslint-react & react-hooks
+
+install this plugins:
+```
+npm i -D eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks
+```
+
+then, update `eslintrc`. update `extends` array:
+```
+"extends": 
+[
+        "eslint:recommended",
+        "plugin:import/errors",
+        "plugin:react/recommended",
+        "plugin:jsx-a11y/recommended",
+		"plugin:react-hooks/recommended",
+        "prettier"
+]
+```
+add this **top level** `rules` object:
+```
+"rules": {
+    "react/prop-types": 0,
+    "react/react-in-jsx-scope": 0
+}
+```
+and update your `plugin` section: 
+```
+"plugins": ["react" , "jsx-a11y" , "import"]
+```
+finally add this **top level** setting to the file:
+```
+"settings": {
+    "react": {
+        "version": "detect"
+    }
+}
+```
+
 ## 4. Git
 
 after `git init` and if you want create a new repo in github and after `git push` , add a `.gitignore` file and put:
@@ -81,7 +120,7 @@ npm i -D parcel
 ```
 parcel version 2 is good for me.
 
-in the `package.json` and in the `script` section add the entry point of your application:
+in the `package.json` and in the `script` section add the entry point of your application(maybe it's in the public folder):
 ```
 "dev": "parcel src/index.html"
 ```
