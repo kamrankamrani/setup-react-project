@@ -23,7 +23,7 @@ add in script section a command in the `package.json` file:
 ```
 the line above means that prettier format code for the src folder. ( of course you have vs code extension ).
 
-later you can use `npm format` to format your code.
+later you can use `npm run format` to format your code.
 
 ## 3. eslint
 
@@ -69,12 +69,12 @@ then, update `eslintrc`. update `extends` array:
 ```
 "extends": 
 [
-        "eslint:recommended",
-        "plugin:import/errors",
-        "plugin:react/recommended",
-        "plugin:jsx-a11y/recommended",
+		"eslint:recommended",
+		"plugin:import/errors",
+		"plugin:react/recommended",
+		"plugin:jsx-a11y/recommended",
 		"plugin:react-hooks/recommended",
-        "prettier"
+		"prettier"
 ]
 ```
 add this **top level** `rules` object:
