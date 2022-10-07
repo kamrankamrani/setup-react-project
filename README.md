@@ -33,7 +33,7 @@ npm install -D eslint eslint-config-prettier
 ```
 you can use `7.18.0` and `8.1.0` respectively.
 
-create a file `.eslintrc.json` and put the code there:
+create a file `.eslintrc` and put the code there:
 ```
 {
   "extends": ["eslint:recommended", "prettier"],
