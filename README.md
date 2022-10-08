@@ -65,7 +65,7 @@ install this plugins:
 npm i -D eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks
 ```
 
-then, update _`eslintrc`_. update `extends` array: 
+then, update _`eslintrc`_. update `extends` array:
 ```
 "extends": 
 [
