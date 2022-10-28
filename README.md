@@ -200,7 +200,7 @@ add line below to `plugins` array in `.eslint.rc` :
 "@typescript-eslint"
 ```
 
-add this ** top level ** property to `eslint.rc` file :
+add this **top level** property to `eslint.rc` file :
 
 ```
 "parser": "@typescript-eslint/parser",
