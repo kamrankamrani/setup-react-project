@@ -164,3 +164,69 @@ install packages to start:
 ```
 npm install react react-dom
 ```
+
+## 8. Add typescript
+
+edit `package.json` in the `scripts` section, for `format` and `lint` :
+
+```
+  "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
+  "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --quiet"
+  "typecheck": "tsc --noEmit"
+```
+
+add eslint plugins for typescript:
+
+```
+  npm i -D @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-import-resolver-typescript
+```
+
+add plugins to eslint `extends` array:
+
+```
+  "plugin:@typescript-eslint/recommended",
+  "plugin:@typescript-eslint/recommended-requiring-type-checking",
+```
+
+update `rules` section in `eslintrc` and add line below :
+
+```
+"@typescript-eslint/no-empty-functions": 0
+```
+
+add line below to `plugins` array in `.eslint.rc` :
+
+```
+"@typescript-eslint"
+```
+
+add this ** top level ** property to `eslint.rc` file :
+
+```
+"parser": "@typescript-eslint/parser",
+```
+
+and add this line to `parserOptions` in `.eslint.rc` :
+
+```
+"project": ["./tsconfig.json"],
+```
+
+update `setting` section in `eslint.rc` and add this lines :
+
+```
+  "import/parsers": {
+    "@typescript-eslint/parser": [".ts", ".tsx"]
+  },
+  "import/resolver": {
+    "node": {
+      "extensions": [".js", ".jsx", ".ts", ".tsx"]
+    },
+    "typescript": {
+      "alwaysTryTypes": true
+    }
+  }
+```
+
+
+
